@@ -13,13 +13,12 @@ public class AttendeeController {
 
 	private RosterClient attendeeClient;
 	private CompanyClient companyClient;
-	
-	@Autowired
-	public AttendeeController(RosterClient attendeeClient, CompanyClient companyClient) {
+
+	public AttendeeController(@Autowired RosterClient attendeeClient, @Autowired(required=false) CompanyClient companyClient) {
 		this.attendeeClient = attendeeClient;
 		this.companyClient = companyClient;
 	}
-	
+
     @RequestMapping("/")
     public String attendees(@RequestParam(value="page", required=false, defaultValue= "0") int page, Model model) {
         model.addAttribute("attendees", attendeeClient.getAttendees(page).getContent());
@@ -35,5 +34,5 @@ public class AttendeeController {
     	}
         return "detail";
     }
-    
+
 }
