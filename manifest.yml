@@ -6,6 +6,8 @@ applications:
   disk_quota: 1G
   instances: 1
   memory: 750M
+  routes:
+  - route: attendee-viewer-mvesper.cfapps.io
   services:
   - config-server
   - eureka-service
