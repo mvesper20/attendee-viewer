@@ -5,8 +5,8 @@ applications:
   buildpack: java_buildpack
   disk_quota: 1G
   instances: 1
-  memory: 750M  
+  memory: 750M
   services:
   - config-server
   - cloud-bus
-  - service-registry
+  - eureka-service
