@@ -11,3 +11,4 @@ applications:
   services:
   - config-server
   - eureka-service
+  - oauth-client
